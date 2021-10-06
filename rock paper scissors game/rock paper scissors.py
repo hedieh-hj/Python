@@ -47,31 +47,34 @@ while True:
                 player1=input("\nwrite your choice player 1  (rock 👊  paper 🤚 scissors ✌) = ")
 
                 if player1=="rock" or player1=="paper" or player1=="scissors"  :
+                    flag = 1
+                    winflag = 1
+                    while flag == 1:
+                        player2=input("write your choice player 2  (rock 👊  paper 🤚 scissors ✌) = ")
 
-                    player2=input("write your choice player 2  (rock 👊  paper 🤚 scissors ✌) = ")
+                        if player2=="rock" or player2=="paper" or player2=="scissors":
 
-                    if player2=="rock" or player2=="paper" or player2=="scissors":
+                            if (player1=="rock" and player2=="scissors" ) or (player1=="paper" and player2=="rock") or (player1=="scissors" and player2=="paper"):
+                                count1+=1
+                                i+=1
+                                if count1==counter :
+                                    print(colored("\n*** winner = player 1 ***\n", 'green'))
 
-                        if (player1=="rock" and player2=="scissors" ) or (player1=="paper" and player2=="rock") or (player1=="scissors" and player2=="paper"):
-                            count1+=1
-                            i+=1
-                            if count1==counter :
-                                print(colored("\n*** winner = player 1 ***\n", 'green'))
-                               
-                                break
-                            
+                                    break
 
-                        elif (player2=="rock" and player1=="scissors" ) or (player2=="paper" and player1=="rock") or (player2=="scissors" and player1=="paper"):
-                            count2+=1
-                            i+=1   
-                            if count2==counter:
-                                print(colored("\n*** winner = player 2 ***\n", 'green')) 
-                                
-                                break   
 
-                    else:
-                        print(colored ("\nyou write a illegal word player 2 ! try again...\n" , 'red') )
-                        
+                            elif (player2=="rock" and player1=="scissors" ) or (player2=="paper" and player1=="rock") or (player2=="scissors" and player1=="paper"):
+                                count2+=1
+                                i+=1   
+                                if count2==counter:
+                                    print(colored("\n*** winner = player 2 ***\n", 'green')) 
+
+                                    break   
+
+                        else:
+                            print(colored ("\nyou write a illegal word player 2 ! try again...\n" , 'red') )
+                    if winflag == 0:
+                        break           
                         
 
                 else:
