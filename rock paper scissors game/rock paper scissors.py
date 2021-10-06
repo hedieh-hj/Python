@@ -53,13 +53,13 @@ while True:
                         player2=input("write your choice player 2  (rock 👊  paper 🤚 scissors ✌) = ")
 
                         if player2=="rock" or player2=="paper" or player2=="scissors":
-
+                            flag = 0
                             if (player1=="rock" and player2=="scissors" ) or (player1=="paper" and player2=="rock") or (player1=="scissors" and player2=="paper"):
                                 count1+=1
                                 i+=1
                                 if count1==counter :
                                     print(colored("\n*** winner = player 1 ***\n", 'green'))
-
+                                    winflag = 0
                                     break
 
 
@@ -68,7 +68,7 @@ while True:
                                 i+=1   
                                 if count2==counter:
                                     print(colored("\n*** winner = player 2 ***\n", 'green')) 
-
+                                    winflag = 0
                                     break   
 
                         else:
