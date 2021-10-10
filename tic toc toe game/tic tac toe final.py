@@ -1,6 +1,5 @@
-#from random import randint, choice
+
 from colorama import Fore
-from time import time
 from termcolor import colored
 import random 
 
