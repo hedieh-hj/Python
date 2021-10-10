@@ -116,7 +116,8 @@ def start(a):
 
     if a=='2' :
          player2 = input('player2 name: ')
-    
+    else : 
+        player2='bot'
 
 
     turn = random.choice(text)
