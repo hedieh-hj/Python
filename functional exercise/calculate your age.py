@@ -22,13 +22,43 @@ def miladi_to_shamsi(gy, gm, gd,yy,mm,dd):
   jm = 7 + ((days - 186) // 30)
   jd = 1 + ((days - 186) % 30)
  
- yy=jy-int(yy)
- mm=jm-int(mm)
- dd=jd-int(dd)
+ print(jy,jm,jd)
+ yy=int(yy)
+ mm=int(mm) 
+ dd=int(dd)
+ 
+ if(jd < dd):
+    jm-=1
+    jd+=30
+        
+ if(jm < mm):
+    jm += 12
+    jy -= 1
+ """
+ if (jd < dd):
+     dd=dd-jd
+ else:
+     dd = jd - dd
+ """
 
- h=yy*52*7*24
- min=h*60
- sec=min*60
+ yy = jy - yy
+ mm = jm - mm
+ dd = jd - dd
+ 
+
+ if yy>=1:
+    h=yy*362*24
+    min=h*60
+    sec=min*60
+ else :
+     if mm>=1:
+        h=mm*7*24
+        min=h*60
+        sec=min*60
+     else:
+        h=dd*24
+        min=h*60
+        sec=min*60 
 
  return print("you live for ", yy ," years  ", mm ," month ", dd," day ", h ," hours ",min," minutes and ",sec," seconds . ")
 
