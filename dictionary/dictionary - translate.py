@@ -5,24 +5,24 @@ import pyfiglet
 def read():
     if x==1:
 
-        ff = open('translate.txt', 'r')
-        num = ff.read().split('\n')
+        ff = open("translate.txt", "r")
+        num = ff.read().split("\n")
         a=len(num)
-
+        
         for i in range(a):
-
-            if i%2 == 0:
+            
+            if i%2 == 0:  # start i=0
                 dic={}
-                dic['eng']=num[i]
+                dic["eng"]=num[i]
 
             if i%2 != 0:
-                dic['per']=num[i]
+                dic["per"]=num[i]
                 temp.append(dic)
 
         ff.close()
         
     else:
-        print('We can\'t found translate.txt')
+        print("We can\'t found translate.txt")
 
 
 #ff=open ("translate.txt","r")
@@ -39,7 +39,7 @@ while(1):
     if i==1:
         result = pyfiglet.figlet_format(" translate ")
         print(result)
-        choose=int(input("enter the number of your choice ?\n\n1.persian to english \n2.english to persian \n3.add word\n"))
+        choose=int(input("enter the number of your choice ?\n\n1.persian to english \n2.english to persian \n3.add word\ninsert : "))
 
         if choose==1 :
             
@@ -61,11 +61,13 @@ while(1):
                          
                 list2.append(text)
 
-            print("\nTranslate : " + " " .join(list2))
+            print("\ntranslate :" , end=" ")
+            for name in list2:
+                print(name , end=" ")
 
             
 
-            i=int(input("\nif you want start it again , please insert 1 : "))
+            i=int(input("\n\nif you want start it again , please insert 1 : "))
 
 
 ###################################################################
@@ -90,20 +92,27 @@ while(1):
                          
                 list2.append(text)
 
-            print('Translate: ' + ' '.join(list2))
+            print("\ntranslate :" , end=" ")
+            for name in list2:
+                print(name , end=" ")
 
             
-
-            i=int(input("if you want start it again , please insert 1 : "))
+            i=int(input("\n\nif you want start it again , please insert 1 : "))
 
 
 ###########################################################################
         if choose==3:
 
-            pass
+            ff = open("translate.txt", "a")
+            persian = input("per: ")
+            english = input("eng: ")
+            
+            ff.write("\n"+ english + "\n"+ persian)
+            ff.close()
+            temp.append({"english":english, "persian":persian})
             
 
-            i=int(input("if you want start it again , please insert 1 : "))
+            i=int(input("\nif you want start it again , please insert 1 : "))
 
 ##########################################################################
     else :
