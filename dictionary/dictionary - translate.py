@@ -4,7 +4,7 @@ import pyfiglet
 
 def read():
     if x==1:
-
+        #with open("translate.txt", "r") as ff        *mesl khat badishe 
         ff = open("translate.txt", "r")
         num = ff.read().split("\n")
         a=len(num)
@@ -103,15 +103,30 @@ while(1):
 ###########################################################################
         if choose==3:
 
-            ff = open("translate.txt", "a")
-            persian = input("per: ")
-            english = input("eng: ")
-            
-            ff.write("\n"+ english + "\n"+ persian)
-            ff.close()
-            temp.append({"english":english, "persian":persian})
-            
+            flag=0
+            org="eng"
+            tra="per"
 
+            ff = open("translate.txt", "a")
+            english = input("\neng: ")
+            
+            for y in range (len(temp)):
+                if temp[y][org]==english:
+                    text = temp[y][tra]
+                    flag=1
+                    break
+            
+            if flag==1 :         
+                print("this word exist in the list now :) ")
+                print("meaning :" , text)
+
+            else: 
+                persian = input("per: ")   
+                ff.write("\n"+ english + "\n"+ persian)
+                ff.close()
+                temp.append({"english":english, "persian":persian})
+                print("mission complete!")
+    
             i=int(input("\nif you want start it again , please insert 1 : "))
 
 ##########################################################################
