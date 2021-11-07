@@ -210,3 +210,5 @@ paper
 kaghaz
 exam
 emtehan
+help
+komak kardan

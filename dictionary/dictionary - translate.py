@@ -22,7 +22,7 @@ def read():
         ff.close()
         
     else:
-        print("We can\'t found translate.txt")
+        print("We can\'t found translate.txt file !! ")
 
 
 #ff=open ("translate.txt","r")
@@ -37,9 +37,9 @@ while(1):
 
 
     if i==1:
-        result = pyfiglet.figlet_format(" translate ")
+        result = pyfiglet.figlet_format(" t r a n s l a t e ")
         print(result)
-        choose=int(input("enter the number of your choice ?\n\n1.persian to english \n2.english to persian \n3.add word\ninsert : "))
+        choose=int(input("enter the number of your choice ?\n\n1.persian to english \n2.english to persian \n3.add word\n4.exit\ninsert : "))
 
         if choose==1 :
             
@@ -47,7 +47,7 @@ while(1):
             org="per"
             tra="eng"
             
-            list1=input("\nenter your sentece (without . ): ").split( )
+            list1=input("\nenter your sentece : ").split( )
             list2=[]
             
             
@@ -78,7 +78,7 @@ while(1):
             org="eng"
             tra="per"
             
-            list1=input("\nenter your sentece (without . ): ").split( )
+            list1=input("\nenter your sentece : ").split( )
             list2=[]
             
             
@@ -130,7 +130,7 @@ while(1):
             i=int(input("\nif you want start it again , please insert 1 : "))
 
 ##########################################################################
-    else :
-        print("Good Bye !")
-        input("press enter for exit!")
-        break
+        if choose==4 :
+            print("Good Bye !")
+            input("press enter for exit!")
+            break
